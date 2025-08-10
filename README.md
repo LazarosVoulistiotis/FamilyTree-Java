@@ -1,196 +1,120 @@
-FamilyTree Application: Navigating Familial Connections
-!(https://via.placeholder.com/150?text=FamilyTree+Logo) A Java application designed to parse familial data from a CSV file, construct a robust family tree structure, and facilitate querying of relationships.
+# FamilyTree Application: Navigating Familial Connections
+A Java application designed to parse familial data from a CSV file, construct a robust family tree structure, and facilitate querying of relationships.
 
 Table of Contents
-(#1-project-description)
-
-Key Features
-
-(#3-data-source)
-
-(#4-setup-instructions)
-
-
-(#42-general-setup)
-
-(#43-ide-specific-setup)
-
-(#431-netbeans-ide)
-
-(#432-intellij-idea)
-
-(#44-troubleshooting)
-
-
-
-(#7-team-members)
-
-
-
 1. Project Description
-The FamilyTree application is a Java-based project aimed at digitally modeling and managing complex family relationships. It processes structured data from an external CSV file (input.csv), which contains information about individuals and their familial connections (spousal, parent-child). The application's core functionality involves parsing this data to build an in-memory representation of a family tree, enabling various operations such as navigating relationships and potentially querying specific family members or lineages. This project serves as an excellent foundation for understanding data parsing, object-oriented design, and graph data structures in Java.
-
 2. Key Features
-CSV Data Parsing: Reads and interprets familial data from a structured input.csv file.
-
-Dynamic Family Tree Construction: Builds an interconnected data structure representing individuals and their relationships.
-
-Object-Oriented Design: Utilizes Person and Tree classes to model individuals and the overall family structure, promoting modular and maintainable code.
-
-Relationship Mapping: Accurately identifies and stores spousal and parent-child relationships.
-
-Extensible Architecture: Designed to be easily expandable for future features, such as querying specific relationships, displaying the tree, or adding new data sources.
-
 3. Data Source
-The application relies on input.csv as its primary data source. This file must be located in the root directory of the project. It contains two types of entries: individual declarations (Name, Gender) and relationship declarations (Individual1, RelationshipType, Individual2).
-
-Baratheon Family Dataset Summary
-The current input.csv details the following individuals and their relationships:
-
 4. Setup Instructions
+5. Usage
+6. Contributing
+7. Team Members
+
+## 1. Project Description
+The **FamilyTree** application is a Java-based project aimed at digitally modeling and managing complex family relationships. It processes structured data from an external CSV file (**input.csv**), which contains information about individuals and their familial connections (spousal, parent-child). The application's core functionality involves parsing this data to build an in-memory representation of a family tree, enabling various operations such as navigating relationships and potentially querying specific family members or lineages. This project serves as an excellent foundation for understanding data parsing, object-oriented design, and graph data structures in Java.
+
+## 2. Key Features
+* **CSV Data Parsing:** Reads and interprets familial data from a structured *input.csv* file.
+* **Dynamic Family Tree Construction:** Builds an interconnected data structure representing individuals and their relationships.
+* **Object-Oriented Design:** Utilizes *Person* and *Tree* classes to model individuals and the overall family structure, promoting modular and maintainable code.
+* **Relationship Mapping:** Accurately identifies and stores spousal and parent-child relationships.
+* **Extensible Architecture:** Designed to be easily expandable for future features, such as querying specific relationships, displaying the tree, or adding new data sources.
+
+## 3. Data Source
+The application relies on *input.csv* as its primary data source. This file must be located in the root directory of the project. It contains two types of entries: individual declarations (Name, Gender) and relationship declarations (Individual1, RelationshipType, Individual2).
+
+**Baratheon Family Dataset Summary**
+
+The current *input.csv* details the following individuals and their relationships.
+
+## 4. Setup Instructions
 Follow these instructions to get the project up and running on your local machine.
 
-4.1. Prerequisites
+### 4.1. Prerequisites
 Ensure you have the following installed:
+* **Java Development Kit (JDK):** Version 8 or 11.
+* **Git:** For cloning the repository.
+* **Integrated Development Environment (IDE):** NetBeans IDE (8.0+) or IntelliJ IDEA (Community/Ultimate).
 
-Java Development Kit (JDK): Version 8 or newer.
+### 4.2. General Setup
+1. **Clone the Repository:**
 
-Git: For cloning the repository.
+> git clone
+> 
+> cd FamilyTree
 
-Integrated Development Environment (IDE): NetBeans IDE (8.0+) or IntelliJ IDEA (Community/Ultimate).
+2. Place *input.csv*: Ensure the *input.csv* file is located in the root directory of the cloned *FamilyTree* folder.
 
-4.2. General Setup
-**Clone the Repository:**bash
-git clone 
-cd FamilyTree
-
-Place input.csv: Ensure the input.csv file is located in the root directory of the cloned FamilyTree folder.
-
-4.3. IDE-Specific Setup
+### 4.3. IDE-Specific Setup
 The project's source code is located in the src folder of this repository. The most reliable way to integrate it into your IDE is to replace the default src contents generated by your IDE with the provided project source code.
 
-4.3.1. NetBeans IDE
-Create New Project:
+**4.3.1. NetBeans IDE**
+1. **Create New Project:**
+* Open NetBeans.
+* Go to *File > New Project....*
+* Select *Java with Ant* (or *Java with Maven/Gradle* if using a build tool) then *Java Application*.
+* Click *Next*.
+* For *Project Name*, enter *FamilyTree*.
+* Ensure *Create Main Class* is checked.
+* Click *Finish*.
+2. **Close NetBeans:** Close NetBeans IDE completely.
+3. **Replace *src* Contents:**
+* Navigate to your newly created NetBeans project folder (e.g., *C:\Users\YourUser\NetBeansProjects\FamilyTree).*
+* Delete all contents within the *src* folder (e.g., *FamilyTree\src\*).
+* Copy the *src* folder from your cloned GitHub repository (e.g., *FamilyTree-repo\src\*) into your NetBeans project's root directory (e.g., *FamilyTree\*). This will place the project's source code, including *FamilyTree.java* and the *classes* package, into the correct location.
+4. **Reopen NetBeans:** Open NetBeans IDE.
+5. **Run the Project:**
+* In the *Projects* window, expand *FamilyTree > Source Packages*.
+* Locate *FamilyTree.java*.
+* Right-click *FamilyTree.java* and select *Run File*. If prompted to set it as the main class, select OK.
+### 4.3.2. IntelliJ IDEA
+1. **Create New Project:**
+* Open IntelliJ IDEA.
+* Select *New Project.*
+* Choose *Java* (or *Maven/Gradle* if using a build tool) from the left sidebar.
+* Click *Next.*
+* For *Project name*, enter *FamilyTree*.
+* Ensure the correct JDK is selected.
+* Click *Finish*.
+2. **Refactor Main Class (if needed):** If IntelliJ generated a default main class (e.g., *Main.java*) and your main entry point is *FamilyTree.java*, you might need to refactor the generated class name to *FamilyTree* or configure *FamilyTree.java* as the main run configuration.
+3. **Close IntelliJ:** Close IntelliJ IDEA completely.
+4. **Replace *src* Contents:**
+* Navigate to your newly created IntelliJ project folder (e.g., *C:\Users\YourUser\IdeaProjects\FamilyTree).*
+* Delete all contents within the *src* folder (e.g., *FamilyTree\src\*).
+* Copy the *src* folder from your cloned GitHub repository (e.g., *FamilyTree-repo\src\*) into your IntelliJ project's root directory (e.g., *FamilyTree\*). This will place the project's source code, including *FamilyTree.java* and the *classes* package, into the correct location.
+5. **Open IntelliJ:** Open IntelliJ IDEA and open the FamilyTree project folder.
+6. **Run the Program:**
+* In the *Project* tool window, navigate to *src* and locate *FamilyTree.java.*
+* Right-click *FamilyTree.java* and select *Run 'FamilyTree.main()'.*
+### 4.4. Troubleshooting
+* **FileNotFoundException:** Ensure *input.csv* is directly in the root of your project folder (same level as src).
+* **ClassNotFoundException** / Package Issues:
+  * Verify that you have correctly copied the *src* folder from the repository, ensuring all Java files (especially *Person.java* and *Tree.java* within the classes package) are present.
+  * Rebuild your project in the IDE (*Build > Rebuild Project* in IntelliJ, *Clean and Build Project* in NetBeans).
+  * Check your IDE's module settings to ensure the *src* folder is marked as a "Sources Root."
+* **IDE Not Recognizing Files:** If, after copying, the IDE doesn't highlight Java files correctly, try closing and reopening the IDE, or refreshing the project structure.
 
-Open NetBeans.
-
-Go to File > New Project....
-
-Select Java with Ant (or Java with Maven/Gradle if using a build tool) then Java Application.
-
-Click Next.
-
-For Project Name, enter FamilyTree.
-
-Ensure Create Main Class is checked.
-
-Click Finish.
-
-Close NetBeans: Close NetBeans IDE completely.
-
-Replace src Contents:
-
-Navigate to your newly created NetBeans project folder (e.g., C:\Users\YourUser\NetBeansProjects\FamilyTree).
-
-Delete all contents within the src folder (e.g., FamilyTree\src\).
-
-Copy the src folder from your cloned GitHub repository (e.g., FamilyTree-repo\src\) into your NetBeans project's root directory (e.g., FamilyTree\). This will place the project's source code, including FamilyTree.java and the classes package, into the correct location.
-
-Reopen NetBeans: Open NetBeans IDE.
-
-Run the Project:
-
-In the Projects window, expand FamilyTree > Source Packages.
-
-Locate FamilyTree.java.
-
-Right-click FamilyTree.java and select Run File. If prompted to set it as the main class, select OK.
-
-4.3.2. IntelliJ IDEA
-Create New Project:
-
-Open IntelliJ IDEA.
-
-Select New Project.
-
-Choose Java (or Maven/Gradle if using a build tool) from the left sidebar.
-
-Click Next.
-
-For Project name, enter FamilyTree.
-
-Ensure the correct JDK is selected.
-
-Click Finish.
-
-Refactor Main Class (if needed): If IntelliJ generated a default main class (e.g., Main.java) and your main entry point is FamilyTree.java, you might need to refactor the generated class name to FamilyTree or configure FamilyTree.java as the main run configuration.
-
-Close IntelliJ: Close IntelliJ IDEA completely.
-
-Replace src Contents:
-
-Navigate to your newly created IntelliJ project folder (e.g., C:\Users\YourUser\IdeaProjects\FamilyTree).
-
-Delete all contents within the src folder (e.g., FamilyTree\src\).
-
-Copy the src folder from your cloned GitHub repository (e.g., FamilyTree-repo\src\) into your IntelliJ project's root directory (e.g., FamilyTree\). This will place the project's source code, including FamilyTree.java and the classes package, into the correct location.
-
-Open IntelliJ: Open IntelliJ IDEA and open the FamilyTree project folder.
-
-Run the Program:
-
-In the Project tool window, navigate to src and locate FamilyTree.java.
-
-Right-click FamilyTree.java and select Run 'FamilyTree.main()'.
-
-4.4. Troubleshooting
-FileNotFoundException: Ensure input.csv is directly in the root of your project folder (same level as src).
-
-ClassNotFoundException / Package Issues:
-
-Verify that you have correctly copied the src folder from the repository, ensuring all Java files (especially Person.java and Tree.java within the classes package) are present.
-
-Rebuild your project in the IDE (Build > Rebuild Project in IntelliJ, Clean and Build Project in NetBeans).
-
-Check your IDE's module settings to ensure the src folder is marked as a "Sources Root."
-
-IDE Not Recognizing Files: If, after copying, the IDE doesn't highlight Java files correctly, try closing and reopening the IDE, or refreshing the project structure.
-
-5. Usage
+## 5. Usage
 Once the project is successfully set up and compiled:
+* **Run the *FamilyTree.java* main class.**
+* The application will read data from *input.csv.*
+  * Expected output  include a confirmation of successful data loading, a list of individuals, or a demonstration of relationship queries.
 
-Run the FamilyTree.java main class.
+## 6. Contributing
+We welcome contributions to the *FamilyTree* project! Please follow these guidelines to ensure a smooth collaborative process:
+* **Branching Strategy:** We use a feature-branch workflow.
+  * Create a new branch for each new feature or bug fix: *git checkout -b feature/your-feature-name or git checkout -b bugfix/issue-description.*
+  * Base your new branch off the *main* branch.
+* **Code Style:** Adhere to standard Java code conventions (e.g., Google Java Format or Oracle's Code Conventions). Maintain consistent indentation, naming conventions, and commenting practices.
+* **Commit Messages:** Write clear, concise commit messages. Use the present tense and explain what the commit does, not what you did. (e.g., "Add feature X" instead of "Added feature X").
+* **Pull Requests (PRs):**
+  * Submit a Pull Request to the *main* branch when your feature or bug fix is complete.
+  * Provide a clear description of the changes, why they were made, and any relevant issue numbers.
+  * Ensure your code passes all existing tests and consider adding new tests for new functionality.
+* **Issue Reporting:** If you find a bug or have a feature request, please open an issue on the GitHub repository. Provide as much detail as possible, including steps to reproduce, expected behavior, and actual behavior.
 
-The application will read data from input.csv.
-
-(Further usage instructions would depend on the application's output. For example, if it prints to console, describe expected output. If it has a GUI, describe how to interact. As no specific output is defined in the provided materials, this section is kept general.)
-
-Expected output might include a confirmation of successful data loading, a list of individuals, or a demonstration of relationship queries.
-
-6. Contributing
-We welcome contributions to the FamilyTree project! Please follow these guidelines to ensure a smooth collaborative process:
-
-Branching Strategy: We use a feature-branch workflow.
-
-Create a new branch for each new feature or bug fix: git checkout -b feature/your-feature-name or git checkout -b bugfix/issue-description.
-
-Base your new branch off the main branch.
-
-Code Style: Adhere to standard Java code conventions (e.g., Google Java Format or Oracle's Code Conventions). Maintain consistent indentation, naming conventions, and commenting practices.
-
-Commit Messages: Write clear, concise commit messages. Use the present tense and explain what the commit does, not what you did. (e.g., "Add feature X" instead of "Added feature X").
-
-Pull Requests (PRs):
-
-Submit a Pull Request to the main branch when your feature or bug fix is complete.
-
-Provide a clear description of the changes, why they were made, and any relevant issue numbers.
-
-Ensure your code passes all existing tests and consider adding new tests for new functionality.
-
-Issue Reporting: If you find a bug or have a feature request, please open an issue on the GitHub repository. Provide as much detail as possible, including steps to reproduce, expected behavior, and actual behavior.
-
-7. Team Members
-[Peer 1 Name/GitHub Handle]
-
-[Peer 2 Name/GitHub Handle]
+## 7. Team Members
+* Lazaros Voulistiotis / https://github.com/LazarosVoulistiotis
+* John Kakasas / https://github.com/JohnKakasas
+* Dimitris Yfantis
+* Jason Lykakis
